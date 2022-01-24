@@ -15,8 +15,10 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class HomebrewFormulaService {
 	private static final Logger logger = LoggerFactory.getLogger(HomebrewFormulaService.class);
-	@Autowired
 	private HomebrewRestClient homebrewRestClient;
+	public HomebrewFormulaService(HomebrewRestClient homebrewRestClient) {
+		this.homebrewRestClient = homebrewRestClient;
+	}
 	/**
 	 * method to get HomebrewFormulaInfo by formulaName
 	 * @param formulaName
